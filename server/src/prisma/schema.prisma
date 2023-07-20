@@ -1,0 +1,15 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://avnadmin:AVNS_PHpWLvtaFrxDw0Yj-Qq@pg-2c7f6d9c-iswanjumat-4b2a.aivencloud.com:20029/defaultdb?sslmode=require"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  username String   @unique
+  password String
+  name String
+}
