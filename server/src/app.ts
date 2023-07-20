@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 dotenv.config();
+
 app.use(bodyParser.json());
 
 app.use("/auth", authRoutes);
