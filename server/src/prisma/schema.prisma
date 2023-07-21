@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = "postgres://avnadmin:AVNS_PHpWLvtaFrxDw0Yj-Qq@pg-2c7f6d9c-iswanjumat-4b2a.aivencloud.com:20029/defaultdb?sslmode=require"
+  url      = "postgresql://postgres:Rtw9GovHKuFFz8x7@db.pgdxmypibdlumgrtqwgu.supabase.co:5432/postgres"
 }
 
 generator client {
