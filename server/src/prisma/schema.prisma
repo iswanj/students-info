@@ -8,16 +8,60 @@ generator client {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  username String   @unique
+  id       Int    @id @default(autoincrement())
+  username String @unique
   password String
-  name String
+  name     String
 }
 
 model Student {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String
   age       Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Result    Result[]
+}
+
+model Subject {
+  id   Int    @id @default(autoincrement())
+  name String
+  Exam Exam[]
+}
+
+model Exam {
+  id        Int      @id @default(autoincrement())
+  name      String
+  year      Int
+  subject   Subject  @relation(fields: [subjectId], references: [id])
+  subjectId Int
+  Result    Result[]
+}
+
+enum Grade {
+  A
+  B
+  C
+  S
+  F
+}
+
+model GradeRange {
+  id       Int      @id @default(autoincrement())
+  Grade    Grade
+  minMarks Int
+  maxMarks Int
+  Result   Result[]
+}
+
+model Result {
+  id           Int        @id @default(autoincrement())
+  Exam         Exam       @relation(fields: [examId], references: [id])
+  examId       Int
+  marks        Int
+  grade        Grade
+  student      Student    @relation(fields: [studentId], references: [id])
+  studentId    Int
+  GradeRange   GradeRange @relation(fields: [gradeRangeId], references: [id])
+  gradeRangeId Int
 }
