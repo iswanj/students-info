@@ -53,7 +53,6 @@ export async function create(req: Request, res: Response) {
 
 export async function login(req: Request, res: Response) {
   try {
-    console.log("re>>>>", req.body);
     const { username, password } = req.body;
     const secretKey = process.env.SECRET_KEY as Secret;
 

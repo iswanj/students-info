@@ -1,3 +1,5 @@
+import { QueryObject } from "../types";
+
 export function saveToStorage<T>(key: string, valueToSave: T): void {
   try {
     window.localStorage.setItem(key, JSON.stringify(valueToSave));
@@ -23,3 +25,13 @@ export function removeFromStorage(key: string): void {
     console.log("AsyncStorage Error: " + error);
   }
 }
+
+export const getQueryText = (obj: QueryObject): string => {
+  return Object.keys(obj).reduce((text, value, index) => {
+    let separator = "&";
+    if (index === 0) {
+      separator = "";
+    }
+    return (text = text + `${separator}${value}=${obj[value]}`);
+  }, "");
+};

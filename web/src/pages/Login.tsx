@@ -22,9 +22,7 @@ const Login: FC<LoginProps> = ({}) => {
         username: username.current,
         password: password.current,
       });
-      console.log("res: ", res);
       if (!res.data.error) {
-        console.log("res.data", res.data);
         login(res.data);
       }
     } catch (error) {
