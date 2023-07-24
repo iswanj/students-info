@@ -4,8 +4,6 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import { USER } from "../constants";
 
 type User = {
-  // Define the type for your user data here
-  // Example: id: number;
   error: boolean;
   name: string;
   token: string;

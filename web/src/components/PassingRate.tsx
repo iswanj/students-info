@@ -1,6 +1,5 @@
 import { FC, useMemo } from "react";
-import { Line } from "react-chartjs-2";
-import { VictoryBar, VictoryChart, VictoryLine, VictoryTheme } from "victory";
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory";
 import { PassedData } from "../types";
 
 interface PassingRateProps {

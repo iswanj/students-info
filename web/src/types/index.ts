@@ -41,7 +41,7 @@ export interface Student {
 
 export interface GradeRange {
   id: number;
-  Grade: string; // You can use an enum here for better type safety
+  Grade: string;
   minMarks: number;
   maxMarks: number;
 }
@@ -50,7 +50,7 @@ export interface Result {
   id: number;
   examId: number;
   marks: number;
-  grade: string; // You can use an enum here for better type safety
+  grade: string;
   studentId: number;
   gradeRangeId: number;
   student: Student;

@@ -2,6 +2,8 @@ import { FC, useCallback, useRef } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 
+import request from "../api/interceptor";
+
 interface LoginProps {}
 interface ApiResponse {
   error: boolean;
@@ -16,9 +18,9 @@ const Login: FC<LoginProps> = ({}) => {
 
   const handleSubmit = useCallback(async () => {
     try {
-      const url = `${process.env.REACT_APP_API_URL}/auth/login`;
+      const url = `/auth/login`;
 
-      const res = await axios.post<ApiResponse>(url, {
+      const res = await request.post<ApiResponse>(url, {
         username: username.current,
         password: password.current,
       });

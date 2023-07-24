@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import GradeDonut from "../components/GradeDonut";
 import PassingRate from "../components/PassingRate";
 import { fetchResults, fetchSubjects, fetchGradeDistribution, fetchPassedCount } from "../api/home";
-import { DashboardData, FilterData, SearchResultItem, Subjects } from "../types";
+import { DashboardData, FilterData, Subjects } from "../types";
 
 interface HomeProps {}
 
