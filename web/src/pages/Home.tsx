@@ -50,7 +50,7 @@ const Home: FC<HomeProps> = ({}) => {
     <main className="flex min-h-screen flex-col w-full">
       <Header>
         <div className="flex flex-row gap-2 items-center">
-          <h4 className="text-sky-600"> {user?.name}</h4>
+          <h4 className="text-sky-600">Welcome, {user?.name}</h4>
           <button className="btn btn-secondary" onClick={() => logout()}>
             Sign Out
           </button>
